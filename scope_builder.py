@@ -157,7 +157,10 @@ def build_scopes(site_config, tenant_config):
 
     ## Build common abbreviations
     common_abbreviations(scopes, tenant_config['abbreviations'])
-    inv_abbreviations = {v: k for k, v in tenant_config['abbreviations'].iteritems()}
+    inv_abbreviations={}
+    for item in tenant_config['abbreviations']:
+        inv_abbreviations[item] = {v: k for k, v in tenant_config['abbreviations'][item].iteritems()}
+    print(inv_abbreviations)
     
     ## Create new scopes
     errors = []
@@ -175,8 +178,8 @@ def build_scopes(site_config, tenant_config):
             if not scope_name in scope_ids:
                 if site_config['push_scopes']:
                     print('[CREATING SCOPE]: {}'.format(scope_name))
-                    if scope[attribute] in inv_abbreviations:
-                        value = inv_abbreviations[scope[attribute]]
+                    if scope[attribute] in inv_abbreviations[attribute]:
+                        value = inv_abbreviations[attribute][scope[attribute]]
                     else:
                         value = scope[attribute]
                     scope_ids[scope_name]=create_scope(parent=scope_ids[parent],scope_name=scope[attribute],tag_name=attribute,tag_value=value,rc=rc)
@@ -265,7 +268,7 @@ def main():
 
     scopes_config[site_config['tenant']] = tenant_config
     with open('./scopes_config.json', 'w') as outfile:
-        json.dump(scopes_config, outfile,indent=1)
+        json.dump(scopes_config, outfile, indent=1)
 
 if __name__ == '__main__':
     main()

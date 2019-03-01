@@ -27,7 +27,7 @@ import argparse
 import getpass
 import os
 
-def create_scope(parent,scope_name,tag_name,tag_value):
+def create_scope(parent,scope_name,tag_name,tag_value,rc):
     req_payload = {
                         "short_name": "{}".format(scope_name),
                         "short_query": {
@@ -41,6 +41,7 @@ def create_scope(parent,scope_name,tag_name,tag_value):
     scope = resp.json()
     if resp.status_code != 200:
         print(resp.json())
+        return 1
     return scope['id']
 
 def get_columns():
@@ -134,8 +135,9 @@ def build_scopes(site_config, tenant_config):
     subnets.drop(columns='Mask',inplace=True)
     for prefix in prefix_list:
         df['Subnet']=df['IP'].apply(lambda x: supernet(x,prefix))
-        merged = pd.merge(subnets,df[['IP','Subnet']],on='Subnet').set_index('IP')
-        df = df.set_index('IP').combine_first(merged).reset_index()
+        if not df['Subnet'].isnull().all():
+            merged = pd.merge(subnets,df[['IP','Subnet']],on='Subnet').set_index('IP')
+            df = df.set_index('IP').combine_first(merged).reset_index()
 
     ## Create scope list from annotations file
     scopes = df.replace(np.nan,"nan").groupby(columns)['IP'].apply(list)
@@ -155,6 +157,7 @@ def build_scopes(site_config, tenant_config):
 
     ## Build common abbreviations
     common_abbreviations(scopes, tenant_config['abbreviations'])
+    inv_abbreviations = {v: k for k, v in tenant_config['abbreviations'].iteritems()}
     
     ## Create new scopes
     errors = []
@@ -172,7 +175,11 @@ def build_scopes(site_config, tenant_config):
             if not scope_name in scope_ids:
                 if site_config['push_scopes']:
                     print('[CREATING SCOPE]: {}'.format(scope_name))
-                    scope_ids[scope_name]=create_scope(parent=scope_ids[parent],scope_name=scope[attribute],tag_name=attribute,tag_value=scope[attribute])
+                    if scope[attribute] in inv_abbreviations:
+                        value = inv_abbreviations[scope[attribute]]
+                    else:
+                        value = scope[attribute]
+                    scope_ids[scope_name]=create_scope(parent=scope_ids[parent],scope_name=scope[attribute],tag_name=attribute,tag_value=value,rc=rc)
                 else:
                     print('[NEW SCOPE]: {}'.format(scope_name))
                     scope_ids[scope_name]=1
@@ -258,7 +265,7 @@ def main():
 
     scopes_config[site_config['tenant']] = tenant_config
     with open('./scopes_config.json', 'w') as outfile:
-        json.dump(scopes_config, outfile)
+        json.dump(scopes_config, outfile,indent=1)
 
 if __name__ == '__main__':
     main()

@@ -141,7 +141,10 @@ def build_scopes(site_config, tenant_config):
 
     ## Create scope list from annotations file
     scopes = df.replace(np.nan,"nan").groupby(columns)['IP'].apply(list)
-    scopes=scopes.reset_index().replace('nan',np.nan)
+    scopes = scopes.reset_index()
+    for column in scopes.columns:
+        scopes[column]=scopes[column].astype(str)
+    scopes=scopes.replace('nan',np.nan)
 
     ## Gather existing scopes and IDs
     scope_ids = {}
@@ -178,9 +181,12 @@ def build_scopes(site_config, tenant_config):
             if not scope_name in scope_ids:
                 if site_config['push_scopes']:
                     print('[CREATING SCOPE]: {}'.format(scope_name))
-                    if scope[attribute] in inv_abbreviations[attribute]:
-                        value = inv_abbreviations[attribute][scope[attribute]]
-                    else:
+                    try:
+                        if scope[attribute] in inv_abbreviations[attribute]:
+                            value = inv_abbreviations[attribute][scope[attribute]]
+                        else:
+                            value = scope[attribute]
+                    except:
                         value = scope[attribute]
                     scope_ids[scope_name]=create_scope(parent=scope_ids[parent],scope_name=scope[attribute],tag_name=attribute,tag_value=value,rc=rc)
                 else:

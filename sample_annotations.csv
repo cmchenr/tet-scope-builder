@@ -1,0 +1,249 @@
+IP,Net Org,Net Region,Net Type,App Name,App Env,Location
+10.0.0.0/8,ACME,,,,,
+10.0.0.0/10,,US,,,,
+10.0.0.0/12,,US,Data Centre,,,
+10.1.100.0/24,,US,Data Centre,,,
+10.1.100.101,,,,OpenText,Test,NY
+10.1.100.102,,,,OpenText,Test,NY
+10.1.100.103,,,,OpenText,UAT,CA
+10.1.100.104,,,,OpenText,UAT,CA
+10.1.100.105,,,,OpenText,Dev,CA
+10.1.100.106,,,,OpenText,Dev,CA
+10.1.100.107,,,,OpenText,Production,CA
+10.1.100.108,,,,OpenText,Production,CA
+10.1.100.109,,,,OpenText,Production,CA
+10.1.100.110,,,,OpenText,Production,CA
+10.1.101.0/24,,US,Data Centre,,,
+10.1.101.101,,,,DBaaS,Production,NY
+10.1.101.102,,,,DBaaS,Test,NY
+10.1.101.103,,,,DBaaS,Production,CA
+10.1.101.103,,,,DBaaS,Dev,CA
+10.1.101.113,,,,Oracle Exadata,Dev,CA
+10.1.101.114,,,,Oracle Exadata,UAT,CA
+10.1.101.115,,,,Oracle Exadata,Production,CA
+10.1.101.116,,,,SAP HANA,Dev,NC
+10.1.101.117,,,,SAP HANA,Dev,NC
+10.1.101.118,,,,SAP HANA,Test,NC
+10.1.101.119,,,,SAP HANA,UAT,NY
+10.1.101.120,,,,SAP HANA,UAT,CA
+10.1.101.121,,,,SAP HANA,Production,CA
+10.1.101.122,,,,SAP HANA,Production,CA
+10.1.110.0/24,,US,Data Centre,,,
+10.1.110.101,,,,SAP ECC,Production,CA
+10.1.110.102,,,,SAP BW,Production,CA
+10.1.110.103,,,,SAP BW,Production,CA
+10.1.110.104,,,,SAP ECC,Production,CA
+10.1.110.105,,,,SAP POSDM,Production,CA
+10.1.110.106,,,,SAP ECC,Production,CA
+10.1.110.107,,,,SAP PI,Production,CA
+10.1.110.108,,,,SAP SOLMAN,Production,CA
+10.1.110.109,,,,SAP ECC,UAT,NY
+10.1.110.110,,,,SAP ECC,UAT,NY
+10.1.110.111,,,,SAP ECC,Dev,NY
+10.1.110.112,,,,SAP ECC,Dev,NY
+10.1.110.113,,,,SAP BW,UAT,NC
+10.1.110.114,,,,SAP BW,UAT,NC
+10.1.110.115,,,,SAP Portal,UAT,NC
+10.1.110.116,,,,SAP POSDM,UAT,NC
+10.1.110.117,,,,SAP ECC,UAT,NC
+10.1.110.118,,,,SAP PI,UAT,NC
+10.1.110.119,,,,SAP PI,Dev,NY
+10.1.110.120,,,,SAP ECC,UAT,NC
+10.1.110.121,,,,SAP BW,Dev,NY
+10.1.110.122,,,,SAP BW,Dev,NY
+10.1.110.123,,,,SAP POSDM,Dev,NY
+10.1.110.124,,,,SAP ECC,Dev,NY
+10.1.110.125,,,,SAP Retail,Dev,NY
+10.1.110.126,,,,SAP Retail,UAT,CA
+10.1.110.127,,,,SAP Retail,Production,CA
+10.1.110.128,,,,SAP BPC,Dev,CA
+10.1.110.129,,,,SAP BPC,UAT,CA
+10.1.110.130,,,,SAP BPC,Production,CA
+10.1.120.0/24,,US,Data Centre,,,
+10.1.120.5,,,,Sharepoint,Production,NY
+10.1.120.6,,,,Sharepoint,Production,NY
+10.1.120.7,,,,Active Directory,Production,NY
+10.1.120.8,,,,Active Directory,Production,NY
+10.1.120.9,,,,Exchange,Production,NY
+10.1.120.10,,,,Exchange,Production,NY
+10.1.120.11,,,,Exchange,DR,NY
+10.1.120.21,,,,Exchange,DR,NY
+10.1.120.22,,,,SQLServer,UAT,NY
+10.1.120.23,,,,SQLServer,Dev,NY
+10.1.120.24,,,,SQLServer,Test,NY
+10.1.120.25,,,,SQLServer,Production,NY
+10.1.120.26,,,,SQLServer,Production,NY
+10.1.120.27,,,,SQLServer,Production,NY
+10.1.120.28,,,,File and Print,Production,NY
+10.1.120.29,,,,File and Print,Production,NY
+10.1.120.30,,,,File and Print,Production,NY
+10.2.240.0/24,,US,Data Centre,,,
+10.2.240.10,,,,DNS,Production,NY
+10.2.240.11,,,,DNS,Production,NY
+10.2.240.12,,,,DNS,Production,NY
+10.2.240.13,,,,NTP,Production,NY
+10.2.240.14,,,,NTP,Production,NY
+10.2.240.15,,,,Monitoring,Production,NY
+10.2.240.16,,,,Monitoring,Production,NY
+10.2.240.17,,,,Monitoring,Production,NY
+10.2.240.18,,,,Logging,Production,NY
+10.2.240.19,,,,Logging,Test,NY
+10.2.240.20,,,,Service Management,Test,NY
+10.2.240.21,,,,Service Management,Production,NY
+10.5.30.0/24,,US,Data Centre,,,
+10.5.30.10,,,,Management,Production,NY
+10.5.30.12,,,,Storage,Production,NY
+10.5.30.13,,,,Storage,Production,NY
+10.5.30.14,,,,Filer,Dev,NY
+10.5.30.15,,,,Filer,Production,NY
+10.5.30.16,,,,Filer,Production,NY
+10.16.0.0/12,,US,Campus,,,
+10.16.8.0/24,,US,Campus,,,
+10.16.8.27,,,,File and Print,Production,NY
+10.16.8.28,,,,File and Print,Production,NY
+10.16.8.29,,,,Exchange,Production,NY
+10.16.8.30,,,,Exchange,Production,NY
+10.32.0.0/12,,US,Branch,,,
+10.64.0.0/10,,EMEAR,,,,
+10.64.0.0/12,,,Data Centre,,,
+10.64.101.0/24,,,Data Centre,,,
+10.64.101.101,,,,DBaaS,Production,NL
+10.64.101.102,,,,DBaaS,Test,NL
+10.64.101.103,,,,DBaaS,Production,NL
+10.64.101.103,,,,DBaaS,Dev,NL
+10.64.101.113,,,,Oracle Exadata,Dev,NL
+10.64.101.114,,,,Oracle Exadata,UAT,NL
+10.64.101.115,,,,Oracle Exadata,Production,NL
+10.64.101.116,,,,SAP HANA,Dev,NL
+10.64.101.117,,,,SAP HANA,Dev,NL
+10.64.101.118,,,,SAP HANA,Test,NL
+10.64.101.119,,,,SAP HANA,UAT,NL
+10.64.101.120,,,,SAP HANA,UAT,NL
+10.64.101.121,,,,SAP HANA,Production,NL
+10.64.101.122,,,,SAP HANA,Production,NL
+10.64.110.0/24,,,Data Centre,,,
+10.64.110.101,,,,SAP ECC,Production,NL
+10.64.110.102,,,,SAP BW,Production,NL
+10.64.110.103,,,,SAP BW,Production,NL
+10.64.110.104,,,,SAP ECC,Production,NL
+10.64.110.105,,,,SAP POSDM,Production,NL
+10.64.110.106,,,,SAP ECC,Production,NL
+10.64.110.107,,,,SAP PI,Production,NL
+10.64.110.108,,,,SAP SOLMAN,Production,NL
+10.64.110.109,,,,SAP ECC,UAT,NL
+10.64.110.110,,,,SAP ECC,UAT,NL
+10.64.110.111,,,,SAP ECC,Dev,NL
+10.64.110.112,,,,SAP ECC,Dev,NL
+10.64.110.113,,,,SAP BW,UAT,NL
+10.64.110.114,,,,SAP BW,UAT,NL
+10.64.110.115,,,,SAP Portal,UAT,NL
+10.64.110.116,,,,SAP POSDM,UAT,NL
+10.64.110.117,,,,SAP ECC,UAT,NL
+10.64.110.118,,,,SAP PI,UAT,NL
+10.64.110.119,,,,SAP PI,Dev,NL
+10.64.110.120,,,,SAP ECC,UAT,NL
+10.64.110.121,,,,SAP BW,Dev,NL
+10.64.110.122,,,,SAP BW,Dev,NL
+10.64.110.123,,,,SAP POSDM,Dev,NL
+10.64.110.124,,,,SAP ECC,Dev,NL
+10.64.110.125,,,,SAP Retail,Dev,NL
+10.64.110.126,,,,SAP Retail,UAT,NL
+10.64.110.127,,,,SAP Retail,Production,NL
+10.64.110.128,,,,SAP BPC,Dev,NL
+10.64.110.129,,,,SAP BPC,UAT,NL
+10.64.110.130,,,,SAP BPC,Production,NL
+10.64.120.0/24,,,Data Centre,,,
+10.64.120.5,,,,Sharepoint,Production,UK
+10.64.120.6,,,,Sharepoint,Production,UK
+10.64.120.7,,,,Active Directory,Production,UK
+10.64.120.8,,,,Active Directory,Production,UK
+10.64.120.9,,,,Exchange,Production,UK
+10.64.120.10,,,,Exchange,Production,UK
+10.64.120.11,,,,Exchange,DR,UK
+10.64.120.21,,,,Exchange,DR,UK
+10.64.120.22,,,,SQLServer,UAT,UK
+10.64.120.23,,,,SQLServer,Dev,UK
+10.64.120.24,,,,SQLServer,Test,UK
+10.64.120.25,,,,SQLServer,Production,UK
+10.64.120.26,,,,SQLServer,Production,UK
+10.64.120.27,,,,SQLServer,Production,UK
+10.64.120.28,,,,File and Print,Production,UK
+10.64.120.29,,,,File and Print,Production,UK
+10.64.120.230,,,,File and Print,Production,UK
+10.64.120.231,,,,Freight Management,Dev,UK
+10.64.120.232,,,,Freight Management,Test,UK
+10.64.120.233,,,,Freight Management,Production,UK
+10.64.120.234,,,,Freight Management,Production,UK
+10.64.120.235,,,,Fleet Management,Test,UK
+10.64.120.236,,,,Fleet Management,Dev,UK
+10.64.120.237,,,,Fleet Management,Production,UK
+10.64.120.238,,,,Fleet Management,Production,UK
+10.64.120.239,,,,Fleet Management,UAT,UK
+10.68.240.0/24,,EMEAR,Data Centre,,,
+10.68.240.10,,,,DNS,Production,UK
+10.68.240.11,,,,DNS,Production,UK
+10.68.240.12,,,,DNS,Production,UK
+10.68.240.13,,,,NTP,Production,UK
+10.68.240.14,,,,NTP,Production,UK
+10.68.240.15,,,,Monitoring,Production,UK
+10.68.240.16,,,,Monitoring,Production,UK
+10.68.240.17,,,,Monitoring,Production,UK
+10.68.240.18,,,,Logging,Production,UK
+10.68.240.19,,,,Logging,Test,UK
+10.68.240.20,,,,Service Management,Test,UK
+10.68.240.21,,,,Service Management,Production,UK
+10.70.30.0/24,,EMEAR,Data Centre,,,
+10.70.30.10,,,,Management,Production,UK
+10.70.30.12,,,,Storage,Production,UK
+10.70.30.13,,,,Storage,Production,UK
+10.70.30.14,,,,Filer,Dev,UK
+10.70.30.15,,,,Filer,Production,UK
+10.70.30.16,,,,Filer,Production,UK
+10.80.0.0/12,,EMEAR,Campus,,,
+10.80.8.0/24,,,Campus,,,
+10.80.8.27,,,,File and Print,Production,UK
+10.80.8.28,,,,File and Print,Production,UK
+10.80.8.29,,,,Exchange,Production,UK
+10.80.8.30,,,,Exchange,Production,UK
+10.96.0.0/12,,EMEAR,Branch,,,
+10.128.0.0/10,,APJ,,,,
+10.128.0.0/12,,,Data Centre,,,
+10.128.135.0/24,,,Data Centre,,,
+10.128.135.101,,,,DBaaS,Production,HK
+10.128.135.102,,,,DBaaS,Test,HK
+10.128.135.103,,,,DBaaS,Production,HK
+10.128.135.103,,,,DBaaS,Dev,HK
+10.128.135.113,,,,Oracle Exadata,Dev,HK
+10.128.135.114,,,,Oracle Exadata,UAT,HK
+10.128.135.115,,,,Oracle Exadata,Production,HK
+10.128.135.116,,,,"SAP, HANA",Dev,AU
+10.128.135.117,,,,"SAP, HANA",Dev,AU
+10.128.135.118,,,,SAP HANA,Test,AU
+10.128.135.119,,,,SAP HANA,UAT,AU
+10.128.135.120,,,,SAP HANA,UAT,AU
+10.128.135.121,,,,SAP HANA,Production,AU
+10.128.135.122,,,,SAP HANA,Production,AU
+10.128.139.0/24,,APJ,Data Centre,,,
+10.128.139.101,,,,SAP ECC,Production,AU
+10.128.139.102,,,,SAP BW,Production,AU
+10.128.139.103,,,,SAP BW,Production,AU
+10.128.139.104,,,,SAP ECC,Production,AU
+10.128.139.105,,,,SAP POSDM,Production,AU
+10.128.139.106,,,,SAP ECC,Production,AU
+10.128.139.107,,,,SAP PI,Production,AU
+10.128.139.108,,,,SAP SOLMAN,Production,AU
+10.128.139.109,,,,SAP ECC,UAT,AU
+10.128.139.110,,,,SAP ECC,UAT,AU
+10.128.139.111,,,,SAP ECC,Dev,AU
+10.144.0.0/12,,APJ,Campus,,,
+10.144.3.0/24,,APJ,Campus,,,
+10.144.3.27,,,,File and Print,Production,AU
+10.144.3.28,,,,File and Print,Production,AU
+10.144.3.29,,,,Exchange,Production,AU
+10.144.3.30,,,,1,Production,AU
+10.160.0.0/12,,APJ,Branch,,,
+192.168.0.0/17,ACME,Cloud,,,,
+192.168.0.0/19,,,AWS,,,
+192.168.32.0/19,,,Google,,,
+192.168.64.0/19,,,Azure,,,
+8.8.8.8,,,Test,,,

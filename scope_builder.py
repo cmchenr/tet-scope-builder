@@ -53,11 +53,11 @@ Please input the columns that you would like to use to create the scope tree.  T
 ex: Region, Security Zone, Application, Lifecycle
     ''')
     columns = []
-    for column in raw_input('Scope Levels: ').split(','):
+    for column in input('Scope Levels: ').split(','):
         columns.append(column.strip())
     confirmation = False
     while confirmation == False:
-        r = raw_input('You selected {}. Would you like to use these (Y,N)?:'.format(
+        r = input('You selected {}. Would you like to use these (Y,N)?:'.format(
             json.dumps(columns)))
         if r.lower() == 'y' or r.lower() == 'yes':
             confirmation = True
@@ -68,9 +68,9 @@ ex: Region, Security Zone, Application, Lifecycle
 
 
 def supernet(ip, prefix):
-    address = ipaddress.ip_network(unicode(ip))
+    address = ipaddress.ip_network(ip)
     if address.prefixlen > prefix:
-        return str(address.supernet(new_prefix=prefix).with_prefixlen)
+        return str(address.supernet(new_prefix=int(prefix)))
     else:
         return np.nan
 
@@ -86,7 +86,7 @@ def common_abbreviations(scopes, abbreviations):
                     abbreviations[column] = {}
                 for item in values:
                     if item not in abbreviations[column] and isinstance(item,str):
-                        r = raw_input(
+                        r = input(
                             'Create an abbreviation for Value: "{}" in Column: "{}" (Leave blank if none desired):'.format(item, column))
                         if len(r) > 0:
                             abbreviations[column][item] = r
@@ -103,7 +103,7 @@ def long_abbreviations(scopes, abbreviations):
                     abbreviations[column] = {}
                 for item in long_names:
                     if item not in abbreviations[column] and isinstance(item,str):
-                        r = raw_input(
+                        r = input(
                             'MANDATORY: Create an abbreviation for Value: "{}" in Column: "{}":'.format(item, column))
                         if len(r) > 0:
                             abbreviations[column][item] = r
@@ -143,7 +143,7 @@ def shorten_scope(root_scope_name, scope, abbreviations):
                 if attribute not in abbreviations:
                     abbreviations[attribute] = {}
                 if scope[attribute] not in abbreviations[attribute]:
-                    r = raw_input('This scope is too long.  Please create an abbreviation for Value: "{}" in Column: "{}" (Leave blank if none desired):'.format(
+                    r = input('This scope is too long.  Please create an abbreviation for Value: "{}" in Column: "{}" (Leave blank if none desired):'.format(
                         scope[attribute], attribute))
                     if len(r) > 0:
                         abbreviations[attribute][scope[attribute]] = r
@@ -216,9 +216,10 @@ def build_scopes(site_config, tenant_config):
     remove_invalid_chars(scopes, tenant_config['abbreviations'])
 
     inv_abbreviations = {}
+    print(tenant_config['abbreviations'])
     for item in tenant_config['abbreviations']:
         inv_abbreviations[item] = {
-            v: k for k, v in tenant_config['abbreviations'][item].iteritems()}
+            v: k for k, v in tenant_config['abbreviations'][item].items()}
     print(inv_abbreviations)
 
     # Create new scopes
@@ -307,7 +308,7 @@ def main():
                 site_config[conf_vars[arg]['conf']] = getpass.getpass(
                     '{}: '.format(conf_vars[arg]['descr']))
             else:
-                site_config[conf_vars[arg]['conf']] = raw_input(
+                site_config[conf_vars[arg]['conf']] = input(
                     '{}: '.format(conf_vars[arg]['descr']))
         else:
             site_config[conf_vars[arg]['conf']] = attribute

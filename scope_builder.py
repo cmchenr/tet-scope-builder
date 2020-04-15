@@ -27,6 +27,7 @@ import argparse
 import getpass
 import os
 import re
+import tempfile
 
 
 def create_scope(parent, scope_name, tag_name, tag_value, rc):
@@ -163,9 +164,10 @@ def build_scopes(site_config, tenant_config):
     columns = tenant_config['columns']
 
     # Download Annotations File for Root Scope and Load into Pandas Data Frame
-    file_path = '/tmp/temp_annotations.csv'
+    tempfile.gettempdir()
+    file_path = tempfile.tempdir + '/temp_annotations.csv'
     rc.download(file_path, '/assets/cmdb/download/' + root_scope_name)
-    df = pd.read_csv("/tmp/temp_annotations.csv")
+    df = pd.read_csv(tempfile.tempdir+ "/temp_annotations.csv")
 
     # Filter Annotations to only the relevant columns and entries witn non-null values in at least one of the columns
     print(df.columns)

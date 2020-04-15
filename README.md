@@ -7,11 +7,11 @@ Builds a complete multi-tiered Tetration scope tree from column data in an annot
 
 
 
-Python2.7 virtual environment (venv) recommended.
+Python3 - virtual environment (venv) recommended.
 
 Clone this repository.
 ```shell
-git clone https://www.github.com/CiscoSE/tetration-scope-builder
+git clone https://www.github.com/cmchenr/tet-scope-builder
 ```
 
 
@@ -77,10 +77,3 @@ User inputs required are:
 **Root Scope** - to be used for scope creation.
 
 **Column Names** - The column names associated with each of the tiers in order.
-
-## Demonstration
-See demo video here based on 6 tier scope creation using the sample annotation file.
-https://cisco.box.com/s/qp3xttr5iu66a7aufd8v5oc14dcmvb25
-
-## Example Output
-![Scope Output](images/Builder Test_scope_tree.png "Sample Scope Tree")
